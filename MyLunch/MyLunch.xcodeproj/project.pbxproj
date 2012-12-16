@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84CBC249167A742F004E322C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBC248167A742F004E322C /* UIKit.framework */; };
+		84CBC24B167A742F004E322C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBC24A167A742F004E322C /* Foundation.framework */; };
+		84CBC24D167A742F004E322C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBC24C167A742F004E322C /* CoreGraphics.framework */; };
+		84CBC253167A742F004E322C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC251167A742F004E322C /* InfoPlist.strings */; };
+		84CBC255167A742F004E322C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC254167A742F004E322C /* main.m */; };
+		84CBC259167A742F004E322C /* MyLunchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC258167A742F004E322C /* MyLunchAppDelegate.m */; };
+		84CBC25B167A742F004E322C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC25A167A742F004E322C /* Default.png */; };
+		84CBC25D167A742F004E322C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC25C167A742F004E322C /* Default@2x.png */; };
+		84CBC25F167A742F004E322C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC25E167A742F004E322C /* Default-568h@2x.png */; };
+		84CBC268167A749D004E322C /* MyLunchPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC266167A749D004E322C /* MyLunchPostViewController.m */; };
+		84CBC269167A749D004E322C /* MyLunchPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC267167A749D004E322C /* MyLunchPostViewController.xib */; };
+		84CBC26D167A74B9004E322C /* MyLunchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC26B167A74B9004E322C /* MyLunchListViewController.m */; };
+		84CBC26E167A74B9004E322C /* MyLunchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC26C167A74B9004E322C /* MyLunchListViewController.xib */; };
+		84CBC28A167B2753004E322C /* MyLunchCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC288167B2753004E322C /* MyLunchCameraViewController.m */; };
+		84CBC28B167B2753004E322C /* MyLunchCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC289167B2753004E322C /* MyLunchCameraViewController.xib */; };
+		84CBC2AC167C72CA004E322C /* MyLunchPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC2AA167C72C9004E322C /* MyLunchPhotosViewController.m */; };
+		84CBC2AD167C72CA004E322C /* MyLunchPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC2AB167C72CA004E322C /* MyLunchPhotosViewController.xib */; };
+		84CBC2B1167CB839004E322C /* MyLunchItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */; };
+		84CBC2B2167CB839004E322C /* MyLunchItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84CBC244167A742F004E322C /* MyLunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84CBC248167A742F004E322C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84CBC24A167A742F004E322C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84CBC24C167A742F004E322C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84CBC250167A742F004E322C /* MyLunch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyLunch-Info.plist"; sourceTree = "<group>"; };
+		84CBC252167A742F004E322C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84CBC254167A742F004E322C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84CBC256167A742F004E322C /* MyLunch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLunch-Prefix.pch"; sourceTree = "<group>"; };
+		84CBC257167A742F004E322C /* MyLunchAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLunchAppDelegate.h; sourceTree = "<group>"; };
+		84CBC258167A742F004E322C /* MyLunchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLunchAppDelegate.m; sourceTree = "<group>"; };
+		84CBC25A167A742F004E322C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		84CBC25C167A742F004E322C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		84CBC25E167A742F004E322C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		84CBC265167A749D004E322C /* MyLunchPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchPostViewController.h; sourceTree = "<group>"; };
+		84CBC266167A749D004E322C /* MyLunchPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchPostViewController.m; sourceTree = "<group>"; };
+		84CBC267167A749D004E322C /* MyLunchPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchPostViewController.xib; sourceTree = "<group>"; };
+		84CBC26A167A74B9004E322C /* MyLunchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchListViewController.h; sourceTree = "<group>"; };
+		84CBC26B167A74B9004E322C /* MyLunchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchListViewController.m; sourceTree = "<group>"; };
+		84CBC26C167A74B9004E322C /* MyLunchListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchListViewController.xib; sourceTree = "<group>"; };
+		84CBC287167B2753004E322C /* MyLunchCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchCameraViewController.h; sourceTree = "<group>"; };
+		84CBC288167B2753004E322C /* MyLunchCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchCameraViewController.m; sourceTree = "<group>"; };
+		84CBC289167B2753004E322C /* MyLunchCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchCameraViewController.xib; sourceTree = "<group>"; };
+		84CBC2A9167C72C9004E322C /* MyLunchPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchPhotosViewController.h; sourceTree = "<group>"; };
+		84CBC2AA167C72C9004E322C /* MyLunchPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchPhotosViewController.m; sourceTree = "<group>"; };
+		84CBC2AB167C72CA004E322C /* MyLunchPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchPhotosViewController.xib; sourceTree = "<group>"; };
+		84CBC2AE167CB838004E322C /* MyLunchItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchItemDetailViewController.h; sourceTree = "<group>"; };
+		84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchItemDetailViewController.m; sourceTree = "<group>"; };
+		84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchItemDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84CBC241167A742F004E322C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBC249167A742F004E322C /* UIKit.framework in Frameworks */,
+				84CBC24B167A742F004E322C /* Foundation.framework in Frameworks */,
+				84CBC24D167A742F004E322C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84CBC239167A742F004E322C = {
+			isa = PBXGroup;
+			children = (
+				84CBC24E167A742F004E322C /* MyLunch */,
+				84CBC247167A742F004E322C /* Frameworks */,
+				84CBC245167A742F004E322C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84CBC245167A742F004E322C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC244167A742F004E322C /* MyLunch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84CBC247167A742F004E322C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC248167A742F004E322C /* UIKit.framework */,
+				84CBC24A167A742F004E322C /* Foundation.framework */,
+				84CBC24C167A742F004E322C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84CBC24E167A742F004E322C /* MyLunch */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC257167A742F004E322C /* MyLunchAppDelegate.h */,
+				84CBC258167A742F004E322C /* MyLunchAppDelegate.m */,
+				84CBC24F167A742F004E322C /* Supporting Files */,
+				84CBC265167A749D004E322C /* MyLunchPostViewController.h */,
+				84CBC266167A749D004E322C /* MyLunchPostViewController.m */,
+				84CBC267167A749D004E322C /* MyLunchPostViewController.xib */,
+				84CBC26A167A74B9004E322C /* MyLunchListViewController.h */,
+				84CBC26B167A74B9004E322C /* MyLunchListViewController.m */,
+				84CBC26C167A74B9004E322C /* MyLunchListViewController.xib */,
+				84CBC287167B2753004E322C /* MyLunchCameraViewController.h */,
+				84CBC288167B2753004E322C /* MyLunchCameraViewController.m */,
+				84CBC289167B2753004E322C /* MyLunchCameraViewController.xib */,
+				84CBC2A9167C72C9004E322C /* MyLunchPhotosViewController.h */,
+				84CBC2AA167C72C9004E322C /* MyLunchPhotosViewController.m */,
+				84CBC2AB167C72CA004E322C /* MyLunchPhotosViewController.xib */,
+				84CBC2AE167CB838004E322C /* MyLunchItemDetailViewController.h */,
+				84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */,
+				84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */,
+			);
+			path = MyLunch;
+			sourceTree = "<group>";
+		};
+		84CBC24F167A742F004E322C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84CBC250167A742F004E322C /* MyLunch-Info.plist */,
+				84CBC251167A742F004E322C /* InfoPlist.strings */,
+				84CBC254167A742F004E322C /* main.m */,
+				84CBC256167A742F004E322C /* MyLunch-Prefix.pch */,
+				84CBC25A167A742F004E322C /* Default.png */,
+				84CBC25C167A742F004E322C /* Default@2x.png */,
+				84CBC25E167A742F004E322C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84CBC243167A742F004E322C /* MyLunch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84CBC262167A742F004E322C /* Build configuration list for PBXNativeTarget "MyLunch" */;
+			buildPhases = (
+				84CBC240167A742F004E322C /* Sources */,
+				84CBC241167A742F004E322C /* Frameworks */,
+				84CBC242167A742F004E322C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyLunch;
+			productName = MyLunch;
+			productReference = 84CBC244167A742F004E322C /* MyLunch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84CBC23B167A742F004E322C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MyLunch;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = KOlya;
+			};
+			buildConfigurationList = 84CBC23E167A742F004E322C /* Build configuration list for PBXProject "MyLunch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84CBC239167A742F004E322C;
+			productRefGroup = 84CBC245167A742F004E322C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84CBC243167A742F004E322C /* MyLunch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84CBC242167A742F004E322C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBC253167A742F004E322C /* InfoPlist.strings in Resources */,
+				84CBC25B167A742F004E322C /* Default.png in Resources */,
+				84CBC25D167A742F004E322C /* Default@2x.png in Resources */,
+				84CBC25F167A742F004E322C /* Default-568h@2x.png in Resources */,
+				84CBC269167A749D004E322C /* MyLunchPostViewController.xib in Resources */,
+				84CBC26E167A74B9004E322C /* MyLunchListViewController.xib in Resources */,
+				84CBC28B167B2753004E322C /* MyLunchCameraViewController.xib in Resources */,
+				84CBC2AD167C72CA004E322C /* MyLunchPhotosViewController.xib in Resources */,
+				84CBC2B2167CB839004E322C /* MyLunchItemDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84CBC240167A742F004E322C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CBC255167A742F004E322C /* main.m in Sources */,
+				84CBC259167A742F004E322C /* MyLunchAppDelegate.m in Sources */,
+				84CBC268167A749D004E322C /* MyLunchPostViewController.m in Sources */,
+				84CBC26D167A74B9004E322C /* MyLunchListViewController.m in Sources */,
+				84CBC28A167B2753004E322C /* MyLunchCameraViewController.m in Sources */,
+				84CBC2AC167C72CA004E322C /* MyLunchPhotosViewController.m in Sources */,
+				84CBC2B1167CB839004E322C /* MyLunchItemDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84CBC251167A742F004E322C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84CBC252167A742F004E322C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84CBC260167A742F004E322C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84CBC261167A742F004E322C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84CBC263167A742F004E322C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyLunch/MyLunch-Prefix.pch";
+				INFOPLIST_FILE = "MyLunch/MyLunch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		84CBC264167A742F004E322C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyLunch/MyLunch-Prefix.pch";
+				INFOPLIST_FILE = "MyLunch/MyLunch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84CBC23E167A742F004E322C /* Build configuration list for PBXProject "MyLunch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CBC260167A742F004E322C /* Debug */,
+				84CBC261167A742F004E322C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84CBC262167A742F004E322C /* Build configuration list for PBXNativeTarget "MyLunch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84CBC263167A742F004E322C /* Debug */,
+				84CBC264167A742F004E322C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84CBC23B167A742F004E322C /* Project object */;
+}
