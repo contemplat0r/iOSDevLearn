@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyLunchPostViewController.h"
+#import "MyLunchListViewController.h"
 #import "MyLunchCameraViewController.h"
 
 @interface MyLunchAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     UITabBarController *tabController;
     UIWindow *window;
-    UIViewController *listViewController;
-    UIViewController *postViewController;
+    /*UIViewController *listViewController;
+    UIViewController *postViewController;*/
+    MyLunchListViewController *listViewController;
+    MyLunchPostViewController *postViewController;
     MyLunchCameraViewController *cameraViewController;
     
 }

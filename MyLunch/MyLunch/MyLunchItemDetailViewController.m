@@ -54,7 +54,7 @@
 - (void) popToPostViewController
 {
     if(navigationController != nil){
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
 

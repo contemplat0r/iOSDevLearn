@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyLunchListViewController : UIViewController
+@interface MyLunchListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+        NSMutableArray *lunchItemsArray;
+}
+
+@property (nonatomic, retain) NSMutableArray *lunchItemsArray;
+@property (nonatomic, strong) UITableView *lunchItemsListTableView;
 
 @end

@@ -30,8 +30,8 @@
     label.backgroundColor = [UIColor grayColor];
     
     [self.view addSubview:label];
-    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"Camera" image:nil tag:0];
-    self.tabBarItem = item;
+    /*UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"Camera" image:nil tag:0];
+    self.tabBarItem = item*;*/
     
     [label release];
 }

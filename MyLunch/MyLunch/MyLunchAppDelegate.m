@@ -7,8 +7,6 @@
 //
 
 #import "MyLunchAppDelegate.h"
-#import "MyLunchPostViewController.h"
-#import "MyLunchListViewController.h"
 
 @implementation MyLunchAppDelegate
 @synthesize tabController;
@@ -28,26 +26,24 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.tabController = [[UITabBarController alloc] init];
+    UITabBarController *tbController = [[UITabBarController alloc] init];
     postViewController = [[MyLunchPostViewController alloc] initWithNibName:@"MyLunchPostViewController" bundle:nil];
     listViewController = [[MyLunchListViewController alloc] initWithNibName:@"MyLunchListViewController" bundle:nil];
     cameraViewController = [[[MyLunchCameraViewController alloc] init] autorelease];
+    postViewController.listViewController = listViewController;
     
-    /*UINavigationController *navigationController = [[[UINavigationController alloc]
-                                                     initWithRootViewController:postViewController] autorelease];*/
+    postViewController.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Post" image:nil tag:0];
+    cameraViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:nil tag:0];
     NSArray *controllers = [NSArray arrayWithObjects:[postViewController navigationController], listViewController, cameraViewController, nil];
     
-    //NSArray *controllers = [NSArray arrayWithObjects:postViewController, listViewController, cameraViewController, nil];
-    //self.tabController.viewControllers = @[navigationController, listViewController, cameraViewController];
+
+    tbController.viewControllers = controllers;
     
-    self.tabController.viewControllers = controllers;
-    
-    self.window.rootViewController = self.tabController;
-    postViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Post" image:nil tag:0];
-    //[self.window addSubview:tabController.view];
+    self.window.rootViewController = tbController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [tbController release];
     return YES;
 }
 

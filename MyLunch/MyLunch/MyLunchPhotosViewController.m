@@ -60,7 +60,7 @@
                                 initWithNibName:@"MyLunchItemDetailViewController" bundle:nil];
     [itemDetailViewController setNavigationController:self.navigationController];
     if(navigationController != nil){
-        [self.navigationController pushViewController:itemDetailViewController animated:YES];
+        [self.navigationController pushViewController:itemDetailViewController animated:NO];
     }
 }
 
