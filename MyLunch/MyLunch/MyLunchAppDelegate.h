@@ -10,6 +10,9 @@
 #import "MyLunchPostViewController.h"
 #import "MyLunchListViewController.h"
 #import "MyLunchCameraViewController.h"
+#import "MyLunchDataStorage.h"
+
+//MyLunchDataStorage *dataStorage;
 
 @interface MyLunchAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     UITabBarController *tabController;

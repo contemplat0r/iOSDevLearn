@@ -36,6 +36,7 @@
     cameraViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:nil tag:0];
     NSArray *controllers = [NSArray arrayWithObjects:[postViewController navigationController], listViewController, cameraViewController, nil];
     
+    
 
     tbController.viewControllers = controllers;
     

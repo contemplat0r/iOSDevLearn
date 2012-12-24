@@ -26,6 +26,7 @@
 		84CBC2AD167C72CA004E322C /* MyLunchPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC2AB167C72CA004E322C /* MyLunchPhotosViewController.xib */; };
 		84CBC2B1167CB839004E322C /* MyLunchItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */; };
 		84CBC2B2167CB839004E322C /* MyLunchItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */; };
+		84CBC82D16872273004E322C /* MyLunchDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC82C16872273004E322C /* MyLunchDataStorage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		84CBC2AE167CB838004E322C /* MyLunchItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchItemDetailViewController.h; sourceTree = "<group>"; };
 		84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchItemDetailViewController.m; sourceTree = "<group>"; };
 		84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchItemDetailViewController.xib; sourceTree = "<group>"; };
+		84CBC82B16872272004E322C /* MyLunchDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchDataStorage.h; sourceTree = "<group>"; };
+		84CBC82C16872273004E322C /* MyLunchDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchDataStorage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				84CBC2AE167CB838004E322C /* MyLunchItemDetailViewController.h */,
 				84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */,
 				84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */,
+				84CBC82B16872272004E322C /* MyLunchDataStorage.h */,
+				84CBC82C16872273004E322C /* MyLunchDataStorage.m */,
 			);
 			path = MyLunch;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				84CBC28A167B2753004E322C /* MyLunchCameraViewController.m in Sources */,
 				84CBC2AC167C72CA004E322C /* MyLunchPhotosViewController.m in Sources */,
 				84CBC2B1167CB839004E322C /* MyLunchItemDetailViewController.m in Sources */,
+				84CBC82D16872273004E322C /* MyLunchDataStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

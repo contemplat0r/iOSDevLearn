@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyLunchDataStorage.h"
 
 @interface MyLunchListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-        NSMutableArray *lunchItemsArray;
+    NSMutableArray *lunchItemsArray;
+    MyLunchDataStorage *dataStorage;
 }
 
 @property (nonatomic, retain) NSMutableArray *lunchItemsArray;

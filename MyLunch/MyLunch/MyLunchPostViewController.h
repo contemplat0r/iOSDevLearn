@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MyLunchPhotosViewController.h"
 #import "MyLunchListViewController.h"
+#import "MyLunchDataStorage.h"
 
 @interface MyLunchPostViewController : UIViewController <UITextFieldDelegate>
 {
@@ -18,6 +19,7 @@
     UITextField *lunchItemNameTextField;
     //NSMutableArray *lunchItemsArray;
     MyLunchListViewController *listViewController;
+    MyLunchDataStorage *dataStorage;
     //NSString *str;
     
 }

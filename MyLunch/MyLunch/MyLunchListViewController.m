@@ -7,6 +7,7 @@
 //
 
 #import "MyLunchListViewController.h"
+#import "MyLunchDataStorage.h"
 
 @interface MyLunchListViewController ()
 
@@ -44,8 +45,8 @@
     [self.view addSubview:self.lunchItemsListTableView];
     self.lunchItemsListTableView.delegate = self;
     self.lunchItemsListTableView.dataSource = self;
-    /*[lunchItemsArray addObject:@"Pizza"];
-    [lunchItemsArray addObject:@"Soup"];*/
+    dataStorage = [MyLunchDataStorage sharedInstance];
+    [self.lunchItemsListTableView reloadData];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -67,7 +68,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [lunchItemsArray count];
+    //return [lunchItemsArray count];
+    return [dataStorage.lunchItemsArray count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,9 +82,11 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndetifier] autorelease];
     }
     
-    NSString *cellValue = [lunchItemsArray objectAtIndex:indexPath.row];
+    //NSString *cellValue = [lunchItemsArray objectAtIndex:indexPath.row];
+    NSString *cellValue = [dataStorage.lunchItemsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = cellValue;
     return cell;
 }
+
 
 @end

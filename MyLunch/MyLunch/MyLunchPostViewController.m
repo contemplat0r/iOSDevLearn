@@ -8,6 +8,7 @@
 
 #import "MyLunchPostViewController.h"
 #import "MyLunchPhotosViewController.h"
+#import "MyLunchDataStorage.h"
 
 @interface MyLunchPostViewController ()
 
@@ -49,6 +50,7 @@
         [addLunchItemButton setTitle:@"Add item" forState:UIControlStateNormal];
         [addLunchItemButton addTarget:self action:@selector(addItemToLunch) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:addLunchItemButton];
+
         /*UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"Post" image:nil tag:0];
         self.tabBarItem = item;*/
         // Custom initialization
@@ -61,6 +63,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    dataStorage= [MyLunchDataStorage sharedInstance];
+    dataStorage.lunchItemsArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -98,7 +102,7 @@
 
 - (void)addItemToLunch
 {
-    if (listViewController != nil)
+    /*if (listViewController != nil)
     {
         if (listViewController.view)
         {
@@ -106,7 +110,10 @@
             lunchItemNameTextField.text = nil;
             lunchItemNameTextField.placeholder = @"Lunch item name";
         }
-    }
+    }*/
+    
+    if (dataStorage &&  dataStorage.lunchItemsArray != nil)
+        [dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
