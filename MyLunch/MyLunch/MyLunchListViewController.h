@@ -11,11 +11,9 @@
 
 @interface MyLunchListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    NSMutableArray *lunchItemsArray;
     MyLunchDataStorage *dataStorage;
 }
 
-@property (nonatomic, retain) NSMutableArray *lunchItemsArray;
 @property (nonatomic, strong) UITableView *lunchItemsListTableView;
 
 @end

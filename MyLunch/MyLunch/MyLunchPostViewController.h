@@ -11,26 +11,24 @@
 #import "MyLunchListViewController.h"
 #import "MyLunchDataStorage.h"
 
-@interface MyLunchPostViewController : UIViewController <UITextFieldDelegate>
+@interface MyLunchPostViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
 {
     UIButton *addLunchItemButton;
     UINavigationController *navigationController;
     MyLunchPhotosViewController *photosViewController;
     UITextField *lunchItemNameTextField;
-    //NSMutableArray *lunchItemsArray;
+    UITextView *lunchDescriptionTextView;
     MyLunchListViewController *listViewController;
-    MyLunchDataStorage *dataStorage;
-    //NSString *str;
-    
+    MyLunchDataStorage *dataStorage;    
 }
 
-//@property UITabBarItem *tbItem;
-
-//@property(nonatomic, retain) UITextField *lunchItemNameTextField;
 @property(nonatomic, weak) MyLunchListViewController *listViewController;
 
 -(void)pushToPhotoView;
 -(void)createLunchItemNameTextField;
--(void)addItemToLunch;
+-(void)createLunchDescriptionTextView;
+-(void)createAddLunchItemButton;
+-(void)createNavigationController;
+-(void)addItemToLunchDataStorage;
 
 @end

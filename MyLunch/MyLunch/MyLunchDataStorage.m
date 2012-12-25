@@ -12,21 +12,13 @@
 
 @synthesize lunchItemsArray;
 
-/*+(id) init
-{
-    self = [[super alloc] init];
-    luc
-}*/
-
-//+(id) sharedInstance
 +(MyLunchDataStorage*) sharedInstance
 {
-    //static id sharedInstance = nil;
     static MyLunchDataStorage *instance = nil;
     
-    if (instance == nil) {
+    if (instance == nil)
+    {
         instance = [[self alloc] init];
-        //lunchItemsArray = [[NSMutableArray alloc] init];
     }
     return instance;
 }

@@ -16,12 +16,14 @@
 
 @implementation MyLunchPostViewController
 
-//@synthesize lunchItemNameTextField;
 @synthesize listViewController;
 
 - (void)dealloc
 {
     [lunchItemNameTextField release];
+    [lunchDescriptionTextView release];
+    [navigationController release];
+    [addLunchItemButton release];
     [super dealloc];
 }
 
@@ -29,32 +31,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        /*UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(
-                                                                   self.view.frame.size.width/2,
-                                                                   self.view.frame.size.height/2,
-                                                                   180,
-                                                                   20)];
-        label.text = @"Post";
-        label.center = self.view.center;
-        [self.view addSubview:label];*/
+
         navigationController = [[[UINavigationController alloc]
                                                          initWithRootViewController:self] autorelease];
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonSystemItemDone target:self action:@selector(pushToPhotoView)];
         self.navigationItem.rightBarButtonItem = rightButton;
         self.navigationItem.rightBarButtonItem.enabled = YES;
         [self createLunchItemNameTextField];
-        /*self.navigationController.navigationItem.rightBarButtonItem = rightButton;
-        self.navigationController.navigationItem.rightBarButtonItem.enabled = YES;*/
-        addLunchItemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [addLunchItemButton setFrame:CGRectMake(110, 190, 100, 20)];
-        [addLunchItemButton setTitle:@"Add item" forState:UIControlStateNormal];
-        [addLunchItemButton addTarget:self action:@selector(addItemToLunch) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:addLunchItemButton];
+        //[self createLunchDescriptionTextView];
+        [self createAddLunchItemButton];
 
-        /*UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"Post" image:nil tag:0];
-        self.tabBarItem = item;*/
-        // Custom initialization
-        
+        dataStorage = [MyLunchDataStorage sharedInstance];
+        dataStorage.lunchItemsArray = [[NSMutableArray alloc] init];
         
     }
     return self;
@@ -63,8 +51,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    dataStorage= [MyLunchDataStorage sharedInstance];
-    dataStorage.lunchItemsArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -74,18 +60,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)pushToPhotoView
+- (void)createAddLunchItemButton
 {
-    photosViewController = [[MyLunchPhotosViewController alloc]
-                             initWithNibName:@"MyLunchPhotosViewController" bundle:nil];
-    [self.navigationController pushViewController:photosViewController animated:NO];
-    [photosViewController setNavigationController:self.navigationController];
-    [photosViewController release];
+    addLunchItemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [addLunchItemButton setFrame:CGRectMake(110, 320, 100, 20)];
+    [addLunchItemButton setTitle:@"Add item" forState:UIControlStateNormal];
+    [addLunchItemButton addTarget:self action:@selector(addItemToLunchDataStorage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addLunchItemButton];
 }
 
 - (void)createLunchItemNameTextField
 {
-    lunchItemNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 280, 31)];
+    lunchItemNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 30, 280, 31)];
     lunchItemNameTextField.borderStyle = UITextBorderStyleLine;
     lunchItemNameTextField.textColor = [UIColor blackColor];
     lunchItemNameTextField.font = [UIFont systemFontOfSize:17.0];
@@ -100,25 +86,52 @@
     lunchItemNameTextField.delegate = self;
 }
 
-- (void)addItemToLunch
+- (void)createLunchDescriptionTextView
 {
-    /*if (listViewController != nil)
+    lunchDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, 60, 280, 280)];
+    lunchDescriptionTextView.textColor = [UIColor blackColor];
+    lunchDescriptionTextView.font = [UIFont systemFontOfSize:17.0];
+    lunchDescriptionTextView.backgroundColor = [UIColor clearColor];
+    //[lunchDescriptionTextView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    lunchDescriptionTextView.autocorrectionType = UITextAutocorrectionTypeNo;
+    lunchDescriptionTextView.keyboardType = UIKeyboardTypeDefault;
+    lunchDescriptionTextView.keyboardAppearance = UIKeyboardAppearanceDefault;
+    lunchDescriptionTextView.returnKeyType = UIReturnKeyDone;
+    [self.view addSubview:lunchDescriptionTextView];
+    lunchDescriptionTextView.delegate = self;
+}
+
+- (void)addItemToLunchDataStorage
+{
+    if (listViewController != nil)
     {
-        if (listViewController.view)
+        if (dataStorage &&  dataStorage.lunchItemsArray != nil)
         {
-            [listViewController.lunchItemsArray addObject:lunchItemNameTextField.text];
+            [dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
             lunchItemNameTextField.text = nil;
             lunchItemNameTextField.placeholder = @"Lunch item name";
         }
-    }*/
-    
-    if (dataStorage &&  dataStorage.lunchItemsArray != nil)
-        [dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
+    }
+}
+
+- (void)pushToPhotoView
+{
+    photosViewController = [[MyLunchPhotosViewController alloc]
+                            initWithNibName:@"MyLunchPhotosViewController" bundle:nil];
+    [self.navigationController pushViewController:photosViewController animated:NO];
+    [photosViewController setNavigationController:self.navigationController];
+    [photosViewController release];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL) textViewShouldEndEditing:(UITextView *)textView
+{
+    [textView resignFirstResponder];
     return YES;
 }
 
