@@ -19,5 +19,6 @@
 
 -(void)pushToItemDetailView;
 -(void)setNavigationController:(UINavigationController*)nController;
+-(void)popToPostViewController;
 
 @end

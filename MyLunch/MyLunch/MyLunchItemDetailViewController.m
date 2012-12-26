@@ -27,9 +27,14 @@
         label.text = @"Item Detail View";
         label.center = self.view.center;
         [self.view addSubview:label];
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Back to Post" style:UIBarButtonSystemItemDone target:self action:@selector(popToPostViewController)];
+        /*UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Back to Post" style:UIBarButtonSystemItemDone target:self action:@selector(popToPostViewController)];
         self.navigationItem.rightBarButtonItem = rightButton;
-        self.navigationItem.rightBarButtonItem.enabled = YES;
+        self.navigationItem.rightBarButtonItem.enabled = YES;*/
+        /*if (self.navigationItem.rightBarButtonItem != nil) {
+            [self.navigationItem.rightBarButtonItem setTitle:@"Back to Post"];
+            [self.navigationItem.rightBarButtonItem setTarget:self];
+            [self.navigationItem.rightBarButtonItem setAction:@selector(popToPostViewController)];
+        }*/
     }
     return self;
 }
@@ -38,6 +43,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    /*if (self.navigationItem.rightBarButtonItem != nil) {
+        [self.navigationItem.rightBarButtonItem setTitle:@"Back to Post"];
+        [self.navigationItem.rightBarButtonItem setTarget:self];
+        [self.navigationItem.rightBarButtonItem setAction:@selector(popToPostViewController)];
+    }*/
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "MyLunchDataStorage.h"
+#import "MyLunchItemDetailViewController.h"
 
 @interface MyLunchListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     MyLunchDataStorage *dataStorage;
+    UINavigationController *navigationController;
+    MyLunchItemDetailViewController *itemDetailViewController;
+    
 }
 
 @property (nonatomic, strong) UITableView *lunchItemsListTableView;
+-(void)createNavigationController;
 
 @end

@@ -33,8 +33,9 @@
     postViewController.listViewController = listViewController;
     
     postViewController.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Post" image:nil tag:0];
+    listViewController.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"List" image:nil tag:0];
     cameraViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Camera" image:nil tag:0];
-    NSArray *controllers = [NSArray arrayWithObjects:[postViewController navigationController], listViewController, cameraViewController, nil];
+    NSArray *controllers = [NSArray arrayWithObjects:[postViewController navigationController], [listViewController navigationController], cameraViewController, nil];
     
     
 

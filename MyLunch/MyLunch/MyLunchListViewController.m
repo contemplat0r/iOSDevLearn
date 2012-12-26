@@ -7,7 +7,6 @@
 //
 
 #import "MyLunchListViewController.h"
-#import "MyLunchDataStorage.h"
 
 @interface MyLunchListViewController ()
 
@@ -21,8 +20,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"List" image:nil tag:0];
-        self.tabBarItem = item;
+        [self createNavigationController];
+        /*UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:@"List" image:nil tag:0];
+        self.tabBarItem = item;*/
         // Custom initialization
     }
     return self;
@@ -73,10 +73,32 @@
     }
     
     //NSString *cellValue = [lunchItemsArray objectAtIndex:indexPath.row];
-    NSString *cellValue = [dataStorage.lunchItemsArray objectAtIndex:indexPath.row];
+    NSDictionary *lunchItem = [dataStorage.lunchItemsArray objectAtIndex:indexPath.row];
+    //NSString *cellValue = [dataStorage.lunchItemsArray objectAtIndex:indexPath.row];
+    NSString *cellValue = lunchItem[@"itemName"];
     cell.textLabel.text = cellValue;
     return cell;
 }
 
+- (void)createNavigationController
+{
+    navigationController = [[[UINavigationController alloc]
+                             initWithRootViewController:self] autorelease];
+    /*UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonSystemItemDone target:self action:@selector(pushToPhotoView)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    self.navigationItem.rightBarButtonItem.enabled = YES;*/
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    itemDetailViewController = [[MyLunchItemDetailViewController alloc]
+                                initWithNibName:@"MyLunchItemDetailViewController" bundle:nil];
+    [itemDetailViewController setNavigationController:self.navigationController];
+    itemDetailViewController.navigationItem.rightBarButtonItem = nil;
+    if(navigationController != nil){
+        [self.navigationController pushViewController:itemDetailViewController animated:NO];
+    }
+}
 
 @end

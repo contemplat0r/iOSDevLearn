@@ -59,8 +59,22 @@
     itemDetailViewController = [[MyLunchItemDetailViewController alloc]
                                 initWithNibName:@"MyLunchItemDetailViewController" bundle:nil];
     [itemDetailViewController setNavigationController:self.navigationController];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Back to Post" style:UIBarButtonSystemItemDone target:self action:@selector(popToPostViewController)];
+    //UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] init];
+    itemDetailViewController.navigationItem.rightBarButtonItem = rightButton;
+    /*[itemDetailViewController.navigationItem.rightBarButtonItem setTitle:@"Back to Post"];
+    [itemDetailViewController.navigationItem.rightBarButtonItem setTarget:itemDetailViewController];*/
+    
+    itemDetailViewController.navigationItem.rightBarButtonItem.enabled = YES;
     if(navigationController != nil){
         [self.navigationController pushViewController:itemDetailViewController animated:NO];
+    }
+}
+
+- (void) popToPostViewController
+{
+    if(navigationController != nil){
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }
 }
 

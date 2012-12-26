@@ -27,6 +27,7 @@
 		84CBC2B1167CB839004E322C /* MyLunchItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC2AF167CB838004E322C /* MyLunchItemDetailViewController.m */; };
 		84CBC2B2167CB839004E322C /* MyLunchItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */; };
 		84CBC82D16872273004E322C /* MyLunchDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBC82C16872273004E322C /* MyLunchDataStorage.m */; };
+		84CBC8361689A3E2004E322C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CBC8351689A3E2004E322C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		84CBC2B0167CB839004E322C /* MyLunchItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyLunchItemDetailViewController.xib; sourceTree = "<group>"; };
 		84CBC82B16872272004E322C /* MyLunchDataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLunchDataStorage.h; sourceTree = "<group>"; };
 		84CBC82C16872273004E322C /* MyLunchDataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLunchDataStorage.m; sourceTree = "<group>"; };
+		84CBC8351689A3E2004E322C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CBC8361689A3E2004E322C /* QuartzCore.framework in Frameworks */,
 				84CBC249167A742F004E322C /* UIKit.framework in Frameworks */,
 				84CBC24B167A742F004E322C /* Foundation.framework in Frameworks */,
 				84CBC24D167A742F004E322C /* CoreGraphics.framework in Frameworks */,
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				84CBC248167A742F004E322C /* UIKit.framework */,
+				84CBC8351689A3E2004E322C /* QuartzCore.framework */,
 				84CBC24A167A742F004E322C /* Foundation.framework */,
 				84CBC24C167A742F004E322C /* CoreGraphics.framework */,
 			);

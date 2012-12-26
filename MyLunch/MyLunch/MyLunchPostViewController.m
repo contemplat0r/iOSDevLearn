@@ -38,7 +38,7 @@
         self.navigationItem.rightBarButtonItem = rightButton;
         self.navigationItem.rightBarButtonItem.enabled = YES;
         [self createLunchItemNameTextField];
-        //[self createLunchDescriptionTextView];
+        [self createLunchDescriptionTextView];
         [self createAddLunchItemButton];
 
         dataStorage = [MyLunchDataStorage sharedInstance];
@@ -63,7 +63,7 @@
 - (void)createAddLunchItemButton
 {
     addLunchItemButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [addLunchItemButton setFrame:CGRectMake(110, 320, 100, 20)];
+    [addLunchItemButton setFrame:CGRectMake(110, 330, 100, 20)];
     [addLunchItemButton setTitle:@"Add item" forState:UIControlStateNormal];
     [addLunchItemButton addTarget:self action:@selector(addItemToLunchDataStorage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addLunchItemButton];
@@ -71,7 +71,7 @@
 
 - (void)createLunchItemNameTextField
 {
-    lunchItemNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 30, 280, 31)];
+    lunchItemNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 31)];
     lunchItemNameTextField.borderStyle = UITextBorderStyleLine;
     lunchItemNameTextField.textColor = [UIColor blackColor];
     lunchItemNameTextField.font = [UIFont systemFontOfSize:17.0];
@@ -88,11 +88,13 @@
 
 - (void)createLunchDescriptionTextView
 {
-    lunchDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, 60, 280, 280)];
+    lunchDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(20, 70, 280, 250)];
     lunchDescriptionTextView.textColor = [UIColor blackColor];
     lunchDescriptionTextView.font = [UIFont systemFontOfSize:17.0];
     lunchDescriptionTextView.backgroundColor = [UIColor clearColor];
-    //[lunchDescriptionTextView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [lunchDescriptionTextView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [lunchDescriptionTextView.layer setBorderWidth:1.0];
+    [lunchDescriptionTextView.layer setMasksToBounds:YES];
     lunchDescriptionTextView.autocorrectionType = UITextAutocorrectionTypeNo;
     lunchDescriptionTextView.keyboardType = UIKeyboardTypeDefault;
     lunchDescriptionTextView.keyboardAppearance = UIKeyboardAppearanceDefault;
@@ -107,9 +109,16 @@
     {
         if (dataStorage &&  dataStorage.lunchItemsArray != nil)
         {
-            [dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
+            NSDictionary *lunchItem = [NSDictionary dictionaryWithObjectsAndKeys:
+                                       lunchItemNameTextField.text, @"itemName",
+                                       lunchDescriptionTextView.text, @"itemDescription",
+                                       nil];
+            //[dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
+            [dataStorage.lunchItemsArray addObject:lunchItem];
             lunchItemNameTextField.text = nil;
             lunchItemNameTextField.placeholder = @"Lunch item name";
+            lunchDescriptionTextView.text = nil;
+            //[lunchItem release];
         }
     }
 }
@@ -129,10 +138,20 @@
     return YES;
 }
 
-- (BOOL) textViewShouldEndEditing:(UITextView *)textView
+/*- (BOOL) textViewShouldEndEditing:(UITextView *)textView
 {
     [textView resignFirstResponder];
     return YES;
+}*/
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([lunchDescriptionTextView isFirstResponder] && [touch view] != lunchDescriptionTextView)
+    {
+        [lunchDescriptionTextView resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
 }
 
 @end
