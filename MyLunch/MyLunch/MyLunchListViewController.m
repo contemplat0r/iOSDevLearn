@@ -92,6 +92,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [dataStorage setCurrentIndex:indexPath.row];
     itemDetailViewController = [[MyLunchItemDetailViewController alloc]
                                 initWithNibName:@"MyLunchItemDetailViewController" bundle:nil];
     [itemDetailViewController setNavigationController:self.navigationController];

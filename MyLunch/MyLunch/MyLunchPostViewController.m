@@ -115,6 +115,7 @@
                                        nil];
             //[dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
             [dataStorage.lunchItemsArray addObject:lunchItem];
+            [dataStorage setCurrentIndex:(dataStorage.lunchItemsArray.count - 1)];
             lunchItemNameTextField.text = nil;
             lunchItemNameTextField.placeholder = @"Lunch item name";
             lunchDescriptionTextView.text = nil;

@@ -11,6 +11,7 @@
 @implementation MyLunchDataStorage
 
 @synthesize lunchItemsArray;
+@synthesize currentIndex;
 
 +(MyLunchDataStorage*) sharedInstance
 {
