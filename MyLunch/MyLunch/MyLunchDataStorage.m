@@ -16,11 +16,17 @@
 +(MyLunchDataStorage*) sharedInstance
 {
     static MyLunchDataStorage *instance = nil;
+    static dispatch_once_t onceQueue;
+
+    dispatch_once(&onceQueue, ^{
+        instance = [[MyLunchDataStorage alloc] init];
+    });
+    /*static MyLunchDataStorage *instance = nil;
     
     if (instance == nil)
     {
         instance = [[self alloc] init];
-    }
+    }*/
     return instance;
 }
 

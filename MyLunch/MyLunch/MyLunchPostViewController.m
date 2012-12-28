@@ -107,19 +107,29 @@
 {
     if (listViewController != nil)
     {
-        if (dataStorage &&  dataStorage.lunchItemsArray != nil)
+        if (dataStorage && dataStorage.lunchItemsArray != nil && lunchItemNameTextField.text != nil)
         {
-            NSDictionary *lunchItem = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       lunchItemNameTextField.text, @"itemName",
-                                       lunchDescriptionTextView.text, @"itemDescription",
-                                       nil];
-            //[dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
-            [dataStorage.lunchItemsArray addObject:lunchItem];
-            [dataStorage setCurrentIndex:(dataStorage.lunchItemsArray.count - 1)];
-            lunchItemNameTextField.text = nil;
-            lunchItemNameTextField.placeholder = @"Lunch item name";
-            lunchDescriptionTextView.text = nil;
-            //[lunchItem release];
+            
+            NSString *text = [lunchItemNameTextField.text stringByTrimmingCharactersInSet:
+                             [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (text.length > 0)
+            {
+                NSDictionary *lunchItem = [NSDictionary dictionaryWithObjectsAndKeys:                                     lunchItemNameTextField.text, @"itemName",                                      lunchDescriptionTextView.text, @"itemDescription",
+                                           nil];
+                //[dataStorage.lunchItemsArray addObject:lunchItemNameTextField.text];
+                [dataStorage.lunchItemsArray addObject:lunchItem];
+                [dataStorage setCurrentIndex:(dataStorage.lunchItemsArray.count - 1)];
+                lunchItemNameTextField.text = nil;
+                lunchItemNameTextField.placeholder = @"Lunch item name";
+                lunchDescriptionTextView.text = nil;
+                //[lunchItem release];
+            }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:[NSString stringWithFormat:@"Empty item name"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                [alert release];
+            }
         }
     }
 }
